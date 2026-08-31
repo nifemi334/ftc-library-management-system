@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Federal Training Centre Polytechnic, Ikoyi, Lagos Library Management System">
+  <title>FTC Library Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div id="app">
+  <section id="loginView" class="auth-shell">
+    <div class="auth-card">
+      <div class="brand-mark">FTC</div>
+      <p class="eyebrow">FEDERAL TRAINING CENTRE POLYTECHNIC</p>
+      <h1>Library Management System</h1>
+      <p class="muted">Ikoyi, Lagos · Staff Portal</p>
+      <form id="loginForm" class="stack">
+        <label>Username<input id="loginUsername" required autocomplete="username" placeholder="e.g. FTC-STAFF-01"></label>
+        <label>Password<input id="loginPassword" type="password" required autocomplete="current-password" placeholder="••••••••"></label>
+        <button class="btn primary" type="submit">Sign in</button>
+        <p id="loginError" class="form-error" role="alert"></p>
+      </form>
+      <small class="muted">Authorized library staff only.</small>
+    </div>
+  </section>
+
+  <section id="dashboardView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="side-brand"><div class="brand-mark small">FTC</div><div><strong>FTC Library</strong><span>Staff System</span></div></div>
+      <nav id="nav">
+        <button data-page="dashboard" class="nav-item active">▦ <span>Dashboard</span></button>
+        <button data-page="members" class="nav-item">♙ <span>Members</span></button>
+        <button data-page="books" class="nav-item">▤ <span>Books</span></button>
+        <button data-page="borrow" class="nav-item">↗ <span>Borrow Books</span></button>
+        <button data-page="returns" class="nav-item">↙ <span>Return Books</span></button>
+        <button data-page="fines" class="nav-item">₦ <span>Fines</span></button>
+        <button data-page="reports" class="nav-item">▥ <span>Reports</span></button>
+        <button data-page="users" class="nav-item admin-only">♙ <span>Staff / Users</span></button>
+        <button data-page="settings" class="nav-item admin-only">⚙ <span>Settings</span></button>
+        <button data-page="data" class="nav-item admin-only">⇩ <span>Data Management</span></button>
+      </nav>
+      <button id="logoutBtn" class="nav-item logout">↪ <span>Logout</span></button>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="mobileMenu" class="icon-btn">☰</button>
+        <div><p class="eyebrow">FTC LIBRARY</p><h2 id="pageTitle">Dashboard</h2></div>
+        <div class="profile"><div class="avatar" id="avatar">L</div><div><strong id="staffName">Library Staff</strong><span id="staffRole">Librarian</span></div></div>
+      </header>
+
+      <div id="page" class="page"></div>
+    </main>
+  </section>
+</div>
+
+<div id="modal" class="modal hidden"><div class="modal-card"><button id="modalClose" class="modal-close">×</button><div id="modalBody"></div></div></div>
+<div id="toast" class="toast"></div>
+<div id="loading" class="loading hidden"><div class="spinner"></div><span>Processing…</span></div>
+
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>
